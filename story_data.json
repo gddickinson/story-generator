@@ -1,0 +1,135 @@
+{
+  "title": "The Love of the Crystal Key",
+  "world": {
+    "locations": [
+      "Forgotten City",
+      "Ancient Forest",
+      "Mystic Temple",
+      "Crystal Cave",
+      "Hidden Valley"
+    ],
+    "characters": [
+      "The Guardian",
+      "The Trickster",
+      "The Sage",
+      "The Ally",
+      "The Seeker"
+    ],
+    "items": [
+      "Mystic Map",
+      "Ancient Scroll",
+      "Crystal Key",
+      "Forgotten Sword",
+      "Magic Amulet"
+    ]
+  },
+  "events": {
+    "event_0": {
+      "text": "A mysterious stranger arrives in Forgotten City",
+      "mood": "joy",
+      "tension": 0.3
+    },
+    "event_1": {
+      "text": "The Ally uncovers a hidden truth about Mystic Map",
+      "mood": "sadness",
+      "tension": 0.5
+    },
+    "event_2": {
+      "text": "All secrets are revealed in a dramatic confrontation",
+      "mood": "sadness",
+      "tension": 0.7
+    },
+    "event_3": {
+      "text": "A new era begins for the people of Mystic Temple",
+      "mood": "joy",
+      "tension": 0.8999999999999999
+    },
+    "event_4": {
+      "text": "An unexpected challenge tests The Seeker's resolve",
+      "mood": "fear",
+      "tension": 0.5
+    },
+    "event_5": {
+      "text": "All secrets are revealed in a dramatic confrontation",
+      "mood": "surprise",
+      "tension": 0.7
+    },
+    "event_6": {
+      "text": "The truth about Ancient Scroll changes everything",
+      "mood": "fear",
+      "tension": 0.8999999999999999
+    },
+    "event_7": {
+      "text": "An unexpected challenge tests The Sage's resolve",
+      "mood": "anticipation",
+      "tension": 0.5
+    },
+    "event_8": {
+      "text": "A final battle determines the fate of Forgotten City",
+      "mood": "anger",
+      "tension": 0.7
+    },
+    "event_9": {
+      "text": "The truth about Ancient Scroll changes everything",
+      "mood": "sadness",
+      "tension": 0.8999999999999999
+    }
+  },
+  "structure": {
+    "nodes": [
+      "start",
+      "event_0",
+      "event_1",
+      "event_2",
+      "event_3",
+      "event_4",
+      "event_5",
+      "event_6",
+      "event_7",
+      "event_8",
+      "event_9"
+    ],
+    "edges": [
+      [
+        "start",
+        "event_0"
+      ],
+      [
+        "event_0",
+        "event_1"
+      ],
+      [
+        "event_0",
+        "event_4"
+      ],
+      [
+        "event_0",
+        "event_7"
+      ],
+      [
+        "event_1",
+        "event_2"
+      ],
+      [
+        "event_2",
+        "event_3"
+      ],
+      [
+        "event_4",
+        "event_5"
+      ],
+      [
+        "event_5",
+        "event_6"
+      ],
+      [
+        "event_7",
+        "event_8"
+      ],
+      [
+        "event_8",
+        "event_9"
+      ]
+    ]
+  }
+}
