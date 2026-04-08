@@ -1,0 +1,26 @@
+{
+  "introduction": [
+    "A mysterious stranger arrives in {location}",
+    "An ancient artifact is discovered in {location}",
+    "A long-held secret threatens to emerge in {location}",
+    "Two unlikely allies meet in {location}"
+  ],
+  "development": [
+    "{character} uncovers a hidden truth about {item}",
+    "A conflict erupts between {character} and their allies",
+    "An unexpected challenge tests {character}'s resolve",
+    "A crucial decision must be made about {item}"
+  ],
+  "climax": [
+    "All secrets are revealed in a dramatic confrontation",
+    "The true nature of {item} becomes clear",
+    "A final battle determines the fate of {location}",
+    "{character} must face their greatest fear"
+  ],
+  "resolution": [
+    "Peace returns to {location}, but at what cost?",
+    "The truth about {item} changes everything",
+    "{character} emerges transformed by their journey",
+    "A new era begins for the people of {location}"
+  ]
+}
