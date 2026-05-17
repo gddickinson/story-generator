@@ -157,3 +157,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Built using NetworkX for graph visualization
 - Inspired by narrative theory and procedural generation techniques
 - Uses matplotlib for visualization generation
+
+
+---
+*Built with AI assistance from [Claude (Anthropic)](https://claude.com/).*
