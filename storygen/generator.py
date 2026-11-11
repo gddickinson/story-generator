@@ -66,11 +66,10 @@ class NarrativeGenerator:
         seed: Optional[int] = None,
         templates_path: Optional[Path] = None,
     ) -> None:
-        if seed is not None:
-            random.seed(seed)
-            self._rng = np.random.default_rng(seed)
-        else:
-            self._rng = np.random.default_rng()
+        # Each generator owns its random streams (seeded like random.seed(seed)
+        # would be), so it never resets the program's global random state.
+        self._random = random.Random(seed)
+        self._rng = np.random.default_rng(seed)
 
         self.story_world = StoryWorld()
         self.story_graph: nx.DiGraph = nx.DiGraph()
@@ -124,24 +123,24 @@ class NarrativeGenerator:
         if phase not in self.plot_points:
             raise ValueError(f"Unknown story phase: {phase}")
 
-        template = random.choice(self.plot_points[phase])
+        template = self._random.choice(self.plot_points[phase])
         event_text = template.format(
-            location=random.choice(list(self.story_world.locations)),
-            character=random.choice(list(self.story_world.characters)),
-            item=random.choice(list(self.story_world.items)),
+            location=self._random.choice(list(self.story_world.locations)),
+            character=self._random.choice(list(self.story_world.characters)),
+            item=self._random.choice(list(self.story_world.items)),
         )
 
         num_consequences = max(1, int(tension * 3))
         consequences = []
         for _ in range(num_consequences):
-            direction = "increase" if random.random() < tension else "decrease"
-            consequences.append(f"tension_{direction}_{random.choice(self.themes)}")
+            direction = "increase" if self._random.random() < tension else "decrease"
+            consequences.append(f"tension_{direction}_{self._random.choice(self.themes)}")
 
         event_id = f"event_{len(self.events)}"
         event = StoryEvent(
             id=event_id,
             text=event_text,
-            mood=random.choice(self.emotions),
+            mood=self._random.choice(self.emotions),
             consequences=consequences,
             requirements=[],
             tension_level=tension,
@@ -177,8 +176,8 @@ class NarrativeGenerator:
         """Return a JSON-serialisable dict describing the full story."""
         return {
             "title": (
-                f"The {random.choice(self.themes).title()} "
-                f"of the {random.choice(list(self.story_world.items))}"
+                f"The {self._random.choice(self.themes).title()} "
+                f"of the {self._random.choice(list(self.story_world.items))}"
             ),
             "world": {
                 "locations": list(self.story_world.locations),
