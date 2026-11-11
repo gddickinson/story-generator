@@ -17,19 +17,19 @@ A Python-based procedural narrative generation system that creates branching int
   - Resolution
 - **Visual Representation**: Generates visual graph representations of story structures
 - **JSON Output**: Saves complete story data in structured JSON format
-- **Customizable Parameters**: Adjust story complexity, themes, and branching factors
+- **Customizable Parameters**: Set the random seed and the number of branches (`--theme` is accepted but reserved for future presets)
 
 ## Installation
 
 1. Clone this repository:
 ```bash
-git clone [your-repo-url]
-cd interactive-story-generator
+git clone https://github.com/gddickinson/story-generator.git
+cd story-generator
 ```
 
 2. Install required dependencies:
 ```bash
-pip install numpy networkx matplotlib
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -41,6 +41,8 @@ Run the generator with default settings:
 ```python
 python story_generator.py
 ```
+
+Options: `--seed N` (same seed, same story), `--branches N` (default 3), `--output-dir DIR`.
 
 This will:
 1. Generate a new story
@@ -93,7 +95,9 @@ The generator creates two main output files:
    - World details (locations, characters, items)
    - Event descriptions
    - Story structure
-   - Character relationships
+
+   Character relationships are generated in the story world (`generator.story_world.relationships`) but are not
+   written to `story_data.json`.
 
 ## Story Elements
 
@@ -101,7 +105,7 @@ The generator creates two main output files:
 - **Locations**: Dynamic settings where story events take place
 - **Characters**: Story actors with relationships and motivations
 - **Items**: Important objects that influence the narrative
-- **Relationships**: Dynamic connections between characters
+- **Relationships**: A strength for every pair of characters, drawn from a normal distribution (mean 0.5, sd 0.2); not yet used by the plot
 
 ### Narrative Elements
 - **Themes**: Including redemption, discovery, conflict, transformation, love, loss
