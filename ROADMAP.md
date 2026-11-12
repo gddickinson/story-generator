@@ -32,7 +32,7 @@ lists. No tests, no package structure, no CLI options.
       templates, vocabulary, and tension curves
 - [ ] Improve narrative coherence: events should reference earlier events and
       maintain causal chains (currently each event is mostly independent)
-- [ ] Add a web UI (Flask/Streamlit) for generating and exploring stories
+- [x] Add a web UI for generating and exploring stories (FastAPI + static GitHub Pages site, `storygen/web/`)
 - [ ] Generate longer stories with subplots and parallel character threads
 - [ ] Add illustration generation: create scene descriptions suitable for
       image generation APIs (DALL-E, Stable Diffusion prompts)

@@ -1,0 +1,43 @@
+/* Story Generator: lantern-amber accent with violet and teal on the shared neon theme, plus page styles. */
+:root { --accent:#ffb547; --accent2:#e05cff; --accent3:#3de0c8; --glow:rgba(255,181,71,.13); --mid:#8f7bd6; }
+button, .btn, .seg button.on { color:#1a1004; }
+.mark { border-radius:3px 50% 50% 50%; }
+.ctlrow { margin:6px 0 0; } .ctlrow .btns { flex:2; } .ctlrow .btns button { margin:6px 6px 0 0; }
+.scene { font:20px/1.5 Georgia, "Iowan Old Style", serif; color:#f4ead8; margin:6px 0 12px; }
+.playgrid { display:grid; grid-template-columns:1fr 340px; gap:18px; align-items:start; }
+.reader { min-height:320px; outline:none; } .mapbox { position:sticky; top:84px; }
+.meta { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+.tbar { display:inline-block; width:120px; height:8px; background:rgba(255,255,255,.08); border-radius:4px; overflow:hidden; }
+.tbar i { display:block; height:100%; background:linear-gradient(90deg, var(--accent3), var(--accent), var(--accent2)); }
+.who { margin:8px 0 4px; } .cons-row { margin-top:6px; }
+.tag.mood { color:var(--accent); border-color:color-mix(in srgb, var(--accent) 50%, transparent); }
+.tag.cons.increase { color:#ff8a65; } .tag.cons.decrease { color:#7fb2ff; }
+.choices { margin-top:18px; border-top:1px solid var(--line); padding-top:6px; }
+button.choice { display:flex; gap:10px; align-items:baseline; width:100%; text-align:left; text-transform:none; letter-spacing:0;
+  font:15px/1.4 var(--sans); background:color-mix(in srgb, var(--accent) 10%, transparent); color:var(--ink);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--accent) 50%, transparent); padding:10px 14px; margin:8px 0 0; }
+button.choice:hover { background:color-mix(in srgb, var(--accent) 20%, transparent); filter:none; }
+button.choice.seen { opacity:.75; } button.choice small { color:var(--mute); }
+button.choice.alt { background:transparent; }
+.choice .num { font:600 12px var(--mono); color:var(--accent); border:1px solid var(--accent); border-radius:50%;
+  min-width:22px; height:22px; line-height:20px; text-align:center; flex:none; }
+.theend { font:600 18px var(--sans); color:var(--accent); }
+.journal li { margin:4px 0; } .script { padding-left:18px; } .script li { margin:6px 0; }
+svg.storymap { width:100%; height:auto; display:block; }
+.storymap .edge { fill:none; stroke:var(--line); stroke-width:2; } .storymap .edge.lit { stroke:var(--accent); }
+.storymap .node circle, .storymap .node rect { fill:#0b0f1f; stroke:var(--mute); stroke-width:1.5; }
+.storymap .node.seen circle, .storymap .node.seen rect { fill:color-mix(in srgb, var(--accent) 30%, #0b0f1f); stroke:var(--accent); }
+.storymap .node.resolution.seen rect { fill:color-mix(in srgb, var(--accent3) 35%, #0b0f1f); stroke:var(--accent3); }
+.storymap .node.cur circle, .storymap .node.cur rect { stroke:#fff; stroke-width:3; filter:drop-shadow(0 0 6px var(--accent)); }
+.storymap text { fill:var(--ink); font:600 10px var(--mono); text-anchor:middle; pointer-events:none; }
+.storymap .rowlab { fill:var(--mute); font:10px var(--mono); text-anchor:start; }
+.storymap a:focus-visible circle, .storymap a:focus-visible rect { stroke:var(--accent3); stroke-width:3; }
+svg.relgraph { width:100%; max-width:460px; height:auto; display:block; margin:0 auto; }
+.relgraph .cnode circle { fill:#0b0f1f; stroke:var(--accent2); stroke-width:2.5; }
+.relgraph .cnode text { fill:var(--ink); font:600 13px var(--sans); }
+.relgraph .rv { fill:var(--mute); font:10px var(--mono); text-anchor:middle; paint-order:stroke; stroke:#05060c; stroke-width:3px; }
+.relgraph .rel:hover line { filter:drop-shadow(0 0 4px var(--accent)); }
+.legend { display:flex; flex-wrap:wrap; gap:4px 14px; font:12px var(--mono); color:var(--mute); margin:8px 0 0; justify-content:center; }
+.legend i, .sw { display:inline-block; width:12px; height:12px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+.door b { color:var(--accent); } .small-btn { font-size:11px; padding:5px 10px; }
+@media (max-width:860px) { .playgrid { grid-template-columns:1fr; } .mapbox { position:static; } .scene { font-size:18px; } }
