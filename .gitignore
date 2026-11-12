@@ -2,3 +2,5 @@ site/
 __pycache__/
 .pytest_cache/
 .DS_Store
+story_data.json
+story_structure.png
