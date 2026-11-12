@@ -52,7 +52,7 @@
 ## Legacy
 | File | Purpose |
 |---|---|
-| `story-generator.py` | Original monolith (kept for reference; superseded by `storygen/` package; still has the set-order bug) |
+| `_archive/story-generator.py` | Original monolith, superseded by `storygen/`; kept for reference, not maintained (see `_archive/README.md`) |
 
 ## Module Dependencies
 ```
