@@ -13,6 +13,7 @@
   Node test: 88 stories match Python; texts/choices/structure identical, story_data.json byte-identical; relationship
   strengths within 1 ULP (NumPy arm64 uses fused multiply-add for `loc + scale*z`).
 - Verified: pytest (all tests), screenshots.py on static site and on run_web.py (port 8138), phone width 390 px.
-- Not done / for George: `requirements.txt` pins numpy<2.0 while the web/CI pins 2.5.4; generated `story_data.json`
-  and `story_structure.png` are still tracked; legacy `story-generator.py` still has the set-order bug.
+- Follow-up fixes (George: "fix any other problems"): requirements.txt now numpy>=1.24,<3 (tests pass on NumPy 2.5.4);
+  generated `story_data.json`/`story_structure.png` and `.DS_Store` files untracked and ignored; legacy
+  `story-generator.py` (still had the set-order bug) moved to `_archive/` with a README. KIT checks re-run: all ok.
 - No LLM/API use. Mac mini not used.
